@@ -1,11 +1,24 @@
 # Terraform
 .terraform/
+.terraform.lock.hcl
 *.tfstate
 *.tfstate.*
 crash.log
+crash.*.log
+
 override.tf
 override.tf.json
-*.tfvars
+*_override.tf
+*_override.tf.json
+
+terraform.tfvars
+*.auto.tfvars
+
+# Terraform plan output
+*.tfplan
+
+# Sensitive variable files
+*.tfvars.json
 
 # MacOS
 .DS_Store
