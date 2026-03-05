@@ -13,15 +13,15 @@ module "vpc" {
   az_b = var.az_b
 }
 
-module "ec2" {
-  source = "../../modules/ec2"
+# module "ec2" {
+#  source = "../../modules/ec2"
 
-  vpc_id = module.vpc.vpc_id
+#  vpc_id = module.vpc.vpc_id
 
-  public_subnet_a_id  = module.vpc.public_subnet_a_id
-  private_subnet_a_id = module.vpc.private_subnet_a_id
-  private_subnet_b_id = module.vpc.private_subnet_b_id
+#  public_subnet_a_id  = module.vpc.public_subnet_a_id
+#  private_subnet_a_id = module.vpc.private_subnet_a_id
+#  private_subnet_b_id = module.vpc.private_subnet_b_id
 
-  ami_id        = var.ami_id
-  instance_type = var.instance_type
-}
+#  ami_id        = var.ami_id
+#  instance_type = var.instance_type
+# }
