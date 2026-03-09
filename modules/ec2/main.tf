@@ -1,6 +1,6 @@
 resource "aws_instance" "web_cache" {
   ami           = var.ami_id
-  instance_type = var.instance_type
+  instance_type = var.web_cache_instance_type
   subnet_id     = var.public_subnet_a_id
 
   vpc_security_group_ids = [
@@ -14,7 +14,7 @@ resource "aws_instance" "web_cache" {
 
 resource "aws_instance" "reverse_proxy" {
   ami           = var.ami_id
-  instance_type = var.instance_type
+  instance_type = var.reverse_proxy_instance_type
   subnet_id     = var.public_subnet_a_id
 
   vpc_security_group_ids = [
@@ -28,7 +28,7 @@ resource "aws_instance" "reverse_proxy" {
 
 resource "aws_instance" "redis_primary" {
   ami           = var.ami_id
-  instance_type = var.instance_type
+  instance_type = var.redis_instance_type
   subnet_id     = var.private_subnet_a_id
 
   vpc_security_group_ids = [
@@ -42,7 +42,7 @@ resource "aws_instance" "redis_primary" {
 
 resource "aws_instance" "redis_replica" {
   ami           = var.ami_id
-  instance_type = var.instance_type
+  instance_type = var.redis_instance_type
   subnet_id     = var.private_subnet_b_id
 
   vpc_security_group_ids = [
