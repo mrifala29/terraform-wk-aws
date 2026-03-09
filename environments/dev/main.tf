@@ -23,5 +23,12 @@ module "ec2" {
   private_subnet_b_id = module.vpc.private_subnet_b_id
 
   ami_id        = var.ami_id
-  instance_type = var.instance_type
+  web_cache_instance_type = var.web_cache_instance_type
+  reverse_proxy_instance_type = var.reverse_proxy_instance_type
+  redis_instance_type = var.redis_instance_type
+
+  volume_type = var.volume_type
+  web_cache_volume_size = var.web_cache_volume_size
+  reverse_proxy_volume_size = var.reverse_proxy_volume_size
+  redis_volume_size = var.redis_volume_size
 }
