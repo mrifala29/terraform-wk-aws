@@ -7,6 +7,11 @@ resource "aws_instance" "web_cache" {
     aws_security_group.web_cache.id
   ]
 
+  root_block_device {
+    volume_size = var.web_cache_volume_size
+    volume_type = var.volume_type
+  }
+
   tags = {
     Name = "web-cache"
   }
@@ -20,6 +25,11 @@ resource "aws_instance" "reverse_proxy" {
   vpc_security_group_ids = [
     aws_security_group.reverse_proxy.id
   ]
+
+  root_block_device {
+    volume_size = var.reverse_proxy_volume_size
+    volume_type = var.volume_type
+  }
 
   tags = {
     Name = "reverse-proxy"
@@ -35,6 +45,11 @@ resource "aws_instance" "redis_primary" {
     aws_security_group.redis_primary.id
   ]
 
+  root_block_device {
+    volume_size = var.redis_volume_size
+    volume_type = var.volume_type
+  }
+
   tags = {
     Name = "redis-primary"
   }
@@ -48,6 +63,11 @@ resource "aws_instance" "redis_replica" {
   vpc_security_group_ids = [
     aws_security_group.redis_replica.id
   ]
+
+  root_block_device {
+    volume_size = var.redis_volume_size
+    volume_type = var.volume_type
+  }
 
   tags = {
     Name = "redis-replica"
