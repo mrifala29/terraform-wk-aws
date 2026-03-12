@@ -23,3 +23,6 @@ terraform.tfvars.test
 
 # MacOS
 .DS_Store
+
+# backup files
+**/**.backup
